@@ -4,10 +4,23 @@
 
 From my experience as an entrepreneur, it is critical to manage voluntary employee attrition to ensure your business remains profitable and maintains high employee morale. Specifically, I want to gain more insight as to what the key contributing factors are when an employee leaves a company voluntarily. In order to analyze these factors I am going to utilize the ‘IBM HR Analytics Employee Attrition & Performance’ dataset and build machine learning algorithms to predict which employees left voluntarily and why. The machine learning algorithms that I plan to build for this analysis are: K-Nearest Neighbors, Decision Tree, and Random Forest. I will also be plotting some ROC curves in order to evaluate which model(s) and thresholds perform the best. Then, I will make some recommendations based on my analysis as to how to better manage employee attrition. 
 
-### Initial Assumptions
+### Initial Questions and Assumptions
+
+#### Business Questions
+* What factors are contributing the most to employee attrition?
+* Which department is suffering the most from employee attrition?
+* How much does commuting time affect employee attrition?
+* Approximately how much money can these models save a business?
+* 
+* 
+* 
+
+
+#### Initial Assumptions
 * Working overtime will correlate strongly with employees leaving voluntarily
 * Younger employees in general will be at higher risk of leaving voluntarily (<40)
 * Low 'Job Satisfaction' and 'Work Life Balance' will cause employees to leave the company voluntariliy
+* Employees that live far away from the office (long commute) are more susceptible to employee attrition
 * 
 
 ### Raw Data Review
@@ -23,7 +36,14 @@ From my experience as an entrepreneur, it is critical to manage voluntary employ
 
 ### Exploratory Data Analysis
 
+* In this dataset, there is a large imbalance between employees that have left and those that have stayed employed (only 237 have left the company while 1233 remained with the company ~84%) so I will use the oversampling technique SMOTE to account for this imbalance
+* 
+* 
+
 ### One-Hot Encoding / Elimination of Features?
+
+* Categorical Features that require one-hot encoding: Business Travel, Department, Education Field, Job Role, Marital Status
+* 
 
 ### Machine Learning Algorithms (INSERT HEADER FOR EACH ML ALGORITHM)
 
@@ -47,3 +67,5 @@ From my experience as an entrepreneur, it is critical to manage voluntary employ
 ### Conclusion and Recommendations
 
 ### Future Work
+* Creating some sort of time series ML algorithm when the information changes over time
+* Creating new features to train ML algorithms on (i.e. creating 'Young and Underpaid Feature')
