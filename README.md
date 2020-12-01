@@ -11,10 +11,6 @@ From my experience as an entrepreneur, it is critical to manage voluntary employ
 * Which department is suffering the most from employee attrition?
 * How much does commuting time affect employee attrition?
 * Approximately how much money can these models save a business?
-* 
-* 
-* 
-
 
 #### Initial Assumptions
 * Working overtime will correlate strongly with employees leaving voluntarily
@@ -46,6 +42,11 @@ From my experience as an entrepreneur, it is critical to manage voluntary employ
 * 
 
 ### Machine Learning Algorithms (INSERT HEADER FOR EACH ML ALGORITHM)
+
+1) Logistic Regression: Want to minimize the Recall (TP/TP+FN) and so I used my findings from EDA to chose the Top 10 Features that I believe would best correlate to an employee leaving voluntarily (see list below):
+
+assumed_top_10 = ['age', 'job_satisfaction', 'monthly_income', 'over_time', 'work_life_balance', 'years_since_last_promotion', 'marital_status_single', 'department_sales', 'num_companies_worked', 'job_involvement']
+
 
 1) Random Forest
 
