@@ -1,6 +1,6 @@
 # Predicting Voluntary Employee Attrition 
 
-![Alt](./images/I-Quit.jpg)
+![Alt](./images/medium-illustration-large-resignation-letter.jpg)
 
 ### Background and Objectives
 
