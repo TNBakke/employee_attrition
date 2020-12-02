@@ -8,6 +8,8 @@ From my experience as an entrepreneur, it is critical to manage voluntary employ
 
 In order to analyze these factors I am going to analyze the ‘IBM HR Analytics Employee Attrition’ (ADD KAGGLE LINK) dataset and build various machine learning algorithms to predict which employees left voluntarily and why. Also, I want determine which factors have the most correlation to an employee leaving voluntairy so HR departments can better understand which employees may be at more risk of leaving. After performing this analysis, I will make some recommendations to HR Departments on actions they can take to help minimize their employee attrition rate. 
 
+USE PHRASE "RETAIN TALENT"
+
 Source: https://www.hrdive.com/news/study-turnover-costs-employers-15000-per-worker/449142/
 Source: https://www.benefitnews.com/news/avoidable-turnover-costing-employers-big?brief=00000152-14a7-d1cc-a5fa-7cffccf00000&utm_content=socialflow&utm_campaign=ebnmagazine&utm_source=twitter&utm_medium=social
 
