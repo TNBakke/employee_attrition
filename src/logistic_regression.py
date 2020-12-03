@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
-plt.rc("font", size=16)
 
 from sklearn.preprocessing import StandardScaler 
 from sklearn import preprocessing
@@ -10,7 +9,18 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix
 
-def logistic_regression(file_path, class_weight=w):
+def logistic_regression_class_weight(class_weight, lasso_features):
+    """Performs logistic regression on attrition DataFrame with list of
+    desired features (i.e. from lasso regression analysis)
+
+    Args:
+        class_weight ([dict]): Dictionary for the desired class
+        weight (i.e. w = {0:10, 1:90})
+        lasso_features ([list]): List of features you want included
+
+    Returns:
+        [Tuple]: Confusion Matrix results from logistic regression
+    """    
     df = pd.read_csv("./data/clean_one_hot_data.csv")
     df.drop(df.columns[0], axis=1,inplace=True)
     
@@ -29,3 +39,6 @@ def logistic_regression(file_path, class_weight=w):
     con_matrix = confusion_matrix(y_test, y_pred).ravel()
     
     return con_matrix
+
+if __name__ == '__main__':
+    # logistic_regression_class_weight(class_weight, lasso_features)
