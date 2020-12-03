@@ -1,4 +1,4 @@
-# <div align="center">Predicting Voluntary Employee Attrition 
+# <div align="center">Predicting and Inferring Voluntary Employee Attrition 
 
 ![Alt](./images/I-Quit.jpg)
 
@@ -116,6 +116,6 @@ As noted above, I am looking to minimize the amount of False Negatives and maxim
 
 
 ### Future Work 
-[ ] Perform some more feature engineering for training the machine learning algorithms (i.e. creating 'Young and Underpaid' feature)
-[ ] Perform XGBoost ML model
-[ ] Create a Flask application for HR departments to access and input in respective employee features to compute a probability of them voluntarily leaving 
+* Perform some more feature engineering for training the machine learning algorithms 
+* Build XGBoost Machine Learning model and evaluate performace against Optimized Random Forest
+* Create a Flask application for HR departments to access and input in respective employee features to compute a probability of them voluntarily leaving 
