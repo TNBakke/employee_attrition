@@ -24,6 +24,22 @@ def attrition_by_feature_plot(df, feature):
     plt.ylabel('Employee Count')
     plt.xticks(rotation=45)
     plt.show()
+
+def cont_col = []
+for column in df.columns:
+    if df[column].dtypes != object and df[column].nunique() > 30:
+        print(f"{column} : Minimum: {df[column].min()}, Maximum: {df[column].max()}")
+        cont_col.append(column)
+        print("====================================")
+
+plt.figure(figsize=(20, 10))
+
+for i, column in enumerate(cont_col, 1):
+    plt.subplot(2, 4, i)
+    df[df["Attrition"] == 'No'][column].hist(bins=35, color='blue', label='Attrition = NO', alpha=0.6)
+    df[df["Attrition"] == 'Yes'][column].hist(bins=35, color='red', label='Attrition = YES', alpha=0.6)
+    plt.legend()
+    plt.xlabel(column)
     
 def roc_plot(X_test, y_test):
     logit_roc_auc = roc_auc_score(y_test, logreg.predict(X_test))
@@ -39,7 +55,6 @@ def roc_plot(X_test, y_test):
     plt.legend(loc="lower right")
     plt.savefig('Log_ROC')
     plt.show()
-    
     
 if __name__ == '__main__':
     # heat_map(df)
