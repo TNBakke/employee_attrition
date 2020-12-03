@@ -82,7 +82,14 @@ Lastly, after plotting each feature with respect to the 'Attrition' target varia
 
 As noted above, there were several columns that need to be one-hot encoded or changed to a binary value so I can utilize the features in my machine learning algorithms. These features included: "business_travel", "attrition", "department", "education_field", "job_role", and "marital_status". It is worth noting that instead of creating 'dummy' variables for the "business_travel" feature, I decided to make these scalar values as I believe this would help the machine learning algorithms. For example, I included a "0" for employee who did not travel, a "1" for employees who traveled rarely and a "2" for employees who traveled frequently.
 
-### Machine Learning Algorithms (INSERT HEADER FOR EACH ML ALGORITHM)
+### Lasso Regression
+
+The first machine learning analysis I wanted to perform on my dataset was Lasso Regression in order to improve the interpretability and performance of my logistic regression model. I decided to select Lasso Regression over Ridge Regression because it will set a majority of the features to zero which works almost as an automatic feature selection mechanism. Once I fit my Lasso Regression to the data, I plotted various Lamda values using Cross Validation to see which value was optimal.
+
+
+### Logistic Regression
+
+
 
 1) Logistic Regression: Want to minimize the Recall (TP/TP+FN) and so I used my findings from EDA to chose the Top 10 Features that I believe would best correlate to an employee leaving voluntarily (see list below):
 
