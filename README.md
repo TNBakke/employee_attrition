@@ -29,7 +29,9 @@ Source: https://www.benefitnews.com/news/avoidable-turnover-costing-employers-bi
 
 ### Raw Data Review
 
-After loading the dataset in to a Pandas DataFrame in Python, I discovered the following attributes: 
+After loading the dataset in to a Pandas DataFrame in Python, here is how the data looks and my main takeaways:
+
+INSERT TABLE HERE
 
 * Dataset includes a total of 1470 rows (i.e. Employees) and 35 columns (i.e. Features)
 * There are several columns that include categorical values: BusinessTravel, Department, EducationField, JobRole, and Marital Status
@@ -43,7 +45,14 @@ After loading the dataset in to a Pandas DataFrame in Python, I discovered the f
 
 ### Exploratory Data Analysis
 
-* In this dataset, there is a large imbalance between employees that have left and those that have stayed employed (only 237 have left the company while 1233 remained with the company ~84%) so I will use the oversampling technique SMOTE to account for this imbalance
+After the dataset was cleaned, I wanted to perform some Exploratory Data Analysis (EDA) on the features to confirm my initial assumptions and see if any other features had strong correlations to employee attrition. So, to start I started plotted a histogram of all the features to better understand the distributions of each column in the dataset. There were a few things that stuck out to me after generating the plot (INSERT PLOT HERE if you want to take a closer look):
+
+* The vast majority of the company lives within 10 miles of the office.
+* Job Satisfaction among the employees is high with most scores at a 3 or a 4 with a 4 being highest score.
+* Majority of employees have worked at only 1 previous company before current position.
+* **IMPORTANT**: The 'Attrition' target variable is highly imbalanced as only ~16% of employees left the company (~84% stayed with company). So, I will need to be sure to account for this imbalance while I am building my machine learning algorithms.
+
+Additionally, after plotting each feature with respect to the 'Attrition' target variable, I found these 8 features had the most insight on if an employee voluntarily left the company.
 
 ![Alt](./images/eda_plot_8.png)
 
