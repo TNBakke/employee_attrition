@@ -1,4 +1,4 @@
-# Predicting Voluntary Employee Attrition 
+<div align="center"> # Predicting Voluntary Employee Attrition 
 
 ![Alt](./images/I-Quit.jpg)
 
