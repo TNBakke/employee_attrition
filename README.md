@@ -45,7 +45,7 @@ After loading the dataset in to a Pandas DataFrame in Python, I discovered the f
 
 * In this dataset, there is a large imbalance between employees that have left and those that have stayed employed (only 237 have left the company while 1233 remained with the company ~84%) so I will use the oversampling technique SMOTE to account for this imbalance
 
-![Alt](./images/business_travel.png)
+![Alt](./images/eda_plot_8.png)
 
 ### One-Hot Encoding / Elimination of Features?
 
