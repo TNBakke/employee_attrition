@@ -8,8 +8,6 @@ From my experience as an entrepreneur, it is critical to manage voluntary employ
 
 In order to analyze these factors I am going to analyze the ‘IBM HR Analytics Employee Attrition Dataset’ (ADD KAGGLE LINK) dataset and build various machine learning algorithms to predict which employees left voluntarily and why. Also, I want determine which factors have the most correlation to an employee leaving voluntairy so HR departments can better understand which employees may be at more risk of leaving. After performing this analysis, I will make some recommendations to HR Departments on actions they can take to help minimize their employee attrition rate and retain talent. 
 
-USE PHRASE "RETAIN TALENT"
-
 Source: https://www.hrdive.com/news/study-turnover-costs-employers-15000-per-worker/449142/
 Source: https://www.benefitnews.com/news/avoidable-turnover-costing-employers-big?brief=00000152-14a7-d1cc-a5fa-7cffccf00000&utm_content=socialflow&utm_campaign=ebnmagazine&utm_source=twitter&utm_medium=social
 
@@ -84,28 +82,29 @@ As noted above, there were several columns that need to be one-hot encoded or ch
 
 ### Lasso Regression
 
-The first machine learning analysis I wanted to perform on my dataset was Lasso Regression in order to improve the interpretability and performance of my logistic regression model. I decided to select Lasso Regression over Ridge Regression because it will set a majority of the features to zero which works almost as an automatic feature selection mechanism. Once I fit my Lasso Regression to the data, I plotted various Lamda values using Cross Validation to see which value was optimal.
+The first machine learning analysis I wanted to perform on my dataset was Lasso Regression in order to improve the interpretability and performance of my logistic regression model. I decided to select Lasso Regression over Ridge Regression because it will set a majority of the features to zero which works almost as an automatic feature selection mechanism. Once I fit my Lasso Regression to the data, I plotted various Lamda values using Cross Validation to see which value was optimal. As you can infer from the plot below, the best value for Lambda on the Test Set for the $R^2$ metric is approximately 0.006.
 
 ![Alt](./images/lasso_plot_with_cv.png)
 
+Taking the optimal value for Lambda of 0.006, I then fit the Lasso Regression to my data and caculated the most important features so I can use them for my Logistic Regression algorithm. 
+
+* The features were: 'age', 'monthly_income', 'job_satisfaction', 'business_travel', 'years_at_company', 'daily_rate'.
+
 ### Logistic Regression
 
+Now, that I have the features from performing my Lasso Regression, I built the Logistic Regression model and adjusted the 'class_weights' in order to maximize the Recall Score. I decided to optimize the Recall score because minimizing the amount of False Negatives would be vital for HR staff to retain talent. In this case, a False Negative would be an employee who was predicted to stay with the company when in reality they voluntarily left. 
 
+After evaluating the 'class_weights', I found the best option was `w = {0:5, 1:95}` and received a Recall Score of 95.8%. Then I plotted the ROC curve for these class weights and calculated an Area Under the Curve (AUC) value of 0.52. These results are not bad, but I believe there is room for improvement. So, I am going to build a Random Forest model and see how that performs compared to my Logistic Regression Model.
 
-1) Logistic Regression: Want to minimize the Recall (TP/TP+FN) and so I used my findings from EDA to chose the Top 10 Features that I believe would best correlate to an employee leaving voluntarily (see list below):
+### Random Forest 
 
-assumed_top_10 = ['age', 'job_satisfaction', 'monthly_income', 'over_time', 'work_life_balance', 'years_since_last_promotion', 'marital_status_single', 'department_sales', 'num_companies_worked', 'job_involvement']
+Using all of the features and data, I built a Random Forest model with all default hyperparameters to see how that performed compared to the Logistic Regression model and the AUC value was about the same at 0.51. So, I figured that by tuning the hyperparameters, I can definitely get a better AUC value. Utilizing scikit-learn's GridSearchCV feature, I was able to optimize the following Random Forest hyperparameters: 
 
+```best_params = {n_estimators = 50, min_samples_split= 5, 
+              min_samples_leaf= 5, max_features= 'auto', max_depth = 10}
+```
+Then, after plotting the optimized Random Forest ROC Curve I was able to increase my AUC Score to 0.54 as shown in the plot below:
 
-1) Random Forest
-
-3) Decision Tree? Confusion Matrix (are we looking for Precision or Recall or what and why?)
-
-5) LASSO Regression (L1) 
-
-6) Feature Importance Graph
-
-7) ROC / AUC Curve
 
 
 ### Conclusion and Recommendations
