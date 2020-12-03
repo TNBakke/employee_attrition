@@ -86,6 +86,7 @@ As noted above, there were several columns that need to be one-hot encoded or ch
 
 The first machine learning analysis I wanted to perform on my dataset was Lasso Regression in order to improve the interpretability and performance of my logistic regression model. I decided to select Lasso Regression over Ridge Regression because it will set a majority of the features to zero which works almost as an automatic feature selection mechanism. Once I fit my Lasso Regression to the data, I plotted various Lamda values using Cross Validation to see which value was optimal.
 
+![Alt](./images/lasso_plot_with_cv.png)
 
 ### Logistic Regression
 
