@@ -76,7 +76,7 @@ According to the 'Heat Map', the features that had the highest correlation with 
 
 Lastly, after plotting each feature with respect to the 'Attrition' target variable, I found these 8 features had valuable insight on if an employee voluntarily left the company.
 
-![Alt](./images/eda_plot_8.png)
+![Alt](./images/eda_plot_8_new.png)
 
 ### Categorical Features and One-Hot Encoding
 
