@@ -70,8 +70,11 @@ After the dataset was cleaned, I wanted to perform some Exploratory Data Analysi
 According to the 'Heat Map', the features that had the highest correlation with attrition were:
 * 'age', 'job_level', 'monthly_income', 'total_working_years', 'stock_option_level', 'years_at_company', and 'years_with_curr_manager'
 
+![Alt](./images/heat_map.png)
+
 *Note: The Heat Map did not include any categorical features, so it only provides insight to the numeric features. I will address the categorical features below* 
 
+**Features Vs. Attrition Target Variable**
 Lastly, after plotting each feature with respect to the 'Attrition' target variable, I found these 8 features had valuable insight on if an employee voluntarily left the company.
 
 ![Alt](./images/eda_plot_8_new.png)
@@ -100,17 +103,19 @@ After evaluating the 'class_weights', I found the best option was `w = {0:5, 1:9
 
 Using all of the features and data, I built a Random Forest model with all default hyperparameters to see how that performed compared to the Logistic Regression model and the AUC value was about the same at 0.51. So, I figured that by tuning the hyperparameters, I can definitely get a better AUC value. Utilizing scikit-learn's GridSearchCV feature, I was able to optimize the following Random Forest hyperparameters: 
 
-```best_params = {n_estimators = 50, min_samples_split= 5, 
-              min_samples_leaf= 5, max_features= 'auto', max_depth = 10}
-```
+`optimal_params = {n_estimators = 50, min_samples_split= 5, min_samples_leaf= 5, max_features= 'auto', max_depth = 10}`
+
 Then, after plotting the optimized Random Forest ROC Curve I was able to increase my AUC Score to 0.54 as shown in the plot below:
 
+![Alt](./images/roc_curve_optimal.png)
 
+As noted above, I am looking to minimize the amount of False Negatives and maximize my Recall score. So, after reivewing the plot and thinking about the tradeoffs, I believe a threshold with a True Positive Rate of about 85% and a False Positive Rate of about 40% would be ideal. 
 
 ### Conclusion and Recommendations
 
+
+
 ### Future Work 
-[] Creating some sort of time series ML algorithm when the information changes over time
-[] Perform some feature engineering to create new features for training the machine learning algorithms (i.e. creating 'Young and Underpaid' feature)
-[] Perform XGBoost ML model
-[] Create a Flask application for HR departments to access and input in respective employee features to compute a probability of them voluntarily leaving 
+[ ] Perform some more feature engineering for training the machine learning algorithms (i.e. creating 'Young and Underpaid' feature)
+[ ] Perform XGBoost ML model
+[ ] Create a Flask application for HR departments to access and input in respective employee features to compute a probability of them voluntarily leaving 
