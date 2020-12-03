@@ -4,9 +4,9 @@
 
 ### Background and Objectives
 
-From my experience as an entrepreneur, it is critical to manage voluntary employee attrition to ensure your business remains profitable and maintains high employee morale. According to Work Institute's 2017 Retention Report, it is estimated to cost as much as 33% of a worker's annual salary to replace an employee. Additionally, the report found that about 75% of the reasons employees leave could have been prevented. So, to help busniesses save money and time trying to find replacements I want to gain more insight as to what the key contributing factors are when an employee leaves a company voluntarily.
+From my experience as an entrepreneur, it is critical to manage voluntary employee attrition ensuring your business remains profitable and maintains a high level of efficiency. According to Work Institute's 2017 Retention Report, it is estimated to cost as much as 33% of a worker's annual salary to replace an employee. Additionally, the report found that about 75% of the reasons employees leave could have been prevented. So, to help businesses save money and time trying to find replacements, I want to gain more insight as to what the key contributing factors are when an employee leaves a company voluntarily.
 
-In order to analyze these factors I am going to analyze the ‘IBM HR Analytics Employee Attrition’ (ADD KAGGLE LINK) dataset and build various machine learning algorithms to predict which employees left voluntarily and why. Also, I want determine which factors have the most correlation to an employee leaving voluntairy so HR departments can better understand which employees may be at more risk of leaving. After performing this analysis, I will make some recommendations to HR Departments on actions they can take to help minimize their employee attrition rate. 
+In order to analyze these factors I am going to analyze the ‘IBM HR Analytics Employee Attrition Dataset’ (ADD KAGGLE LINK) dataset and build various machine learning algorithms to predict which employees left voluntarily and why. Also, I want determine which factors have the most correlation to an employee leaving voluntairy so HR departments can better understand which employees may be at more risk of leaving. After performing this analysis, I will make some recommendations to HR Departments on actions they can take to help minimize their employee attrition rate and retain their talent better. 
 
 USE PHRASE "RETAIN TALENT"
 
@@ -15,25 +15,27 @@ Source: https://www.benefitnews.com/news/avoidable-turnover-costing-employers-bi
 
 ### Initial Questions and Assumptions
 
-#### Business Questions
+#### Business Questions to Answer
 * What factors are contributing the most to employee attrition?
 * Which department is suffering the most from employee attrition?
 * How much does commuting time affect employee attrition?
 * Approximately how much money can these models save a business?
 
-#### Initial Assumptions
+#### Initial Employee Attrition Assumptions
 * Working overtime will correlate strongly with employees leaving voluntarily
 * Younger employees in general will be at higher risk of leaving voluntarily (<40)
 * Low 'Job Satisfaction' and 'Work Life Balance' will cause employees to leave the company voluntariliy
 * Employees that live far away from the office (long commute) are more susceptible to employee attrition
-* 
 
 ### Raw Data Review
-* total of 1470 rows (employees) and 35 columns (features)
-* No null values included in this dataset
-* Need to one-hot encode some of the features (BusinessTravel, Attrition (target), Gender, MaritalStatus?, OverTime, 
-* What is the difference between JobInvolvement and JobLevel? 
-* 
+
+After loading the dataset in to a Pandas DataFrame in Python, I discovered the following attributes: 
+
+* Dataset includes a total of 1470 rows (i.e. Employees) and 35 columns (i.e. Features)
+* There are several columns that include categorical values: BusinessTravel, Department, EducationField, JobRole, and Marital Status
+* The Dataset does not include any 'null' or 'NaN' values
+* There are some columns that can be dropped from the dataset as they do not provide any value: EmployeeCount, EmployeeNumber, StandardHours and Over18
+* Two columns will need to be converted from "Yes" or "No" values to binary values: Attrition (our 'target') and OverTime
 
 ### Data Cleaning
 * remove columns employee_count, employee_number, over18, standard_hours --- DONE
@@ -59,19 +61,13 @@ assumed_top_10 = ['age', 'job_satisfaction', 'monthly_income', 'over_time', 'wor
 
 1) Random Forest
 
-2) K-Nearest Neighbors / XG Boost?
-
 3) Decision Tree? Confusion Matrix (are we looking for Precision or Recall or what and why?)
-
-4) Regularized Linear Regression (L2) 
 
 5) LASSO Regression (L1) 
 
 6) Feature Importance Graph
 
 7) ROC / AUC Curve
-
-8) Neural Net?
 
 
 ### Conclusion and Recommendations
