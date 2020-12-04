@@ -14,7 +14,7 @@ In order to analyze these factors I am going to analyze the [IBM HR Analytics Em
 * What factors are contributing the most to employee attrition?
 * Which department is suffering the most from employee attrition?
 * How much does commuting time affect employee attrition?
-* Approximately how much money can these models save a business?
+* What can HR staff do to help ensure they retain talent?
 
 #### Initial Employee Attrition Assumptions
 * Working overtime will correlate strongly with employees leaving voluntarily
