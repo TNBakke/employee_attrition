@@ -55,7 +55,7 @@ As stated above, there were no 'Null' or 'NaN' values in the dataset, so I did n
 
 ### Exploratory Data Analysis
 
-After the dataset was cleaned, I wanted to perform some Exploratory Data Analysis (EDA) on the features to confirm my initial assumptions and see if any other features had strong correlations to employee attrition. So, I plotted a histogram and a 'Heat Map'of all the features to better understand the distributions and correlations of each column in the dataset. There were a few things that stuck out to me after generating the plot (INSERT PLOTS HERE AND HERE if you want to take a closer look):
+After the dataset was cleaned, I wanted to perform some Exploratory Data Analysis (EDA) on the features to confirm my initial assumptions and see if any other features had strong correlations to employee attrition. So, I plotted a histogram and a [Heat Map](https://github.com/TNBakke/employee_attrition/blob/main/images/heat_map.png) of all the features to better understand the distributions and correlations of each column in the dataset. There were a few things that stuck out to me after generating the plots:
 
 **Feature Distribution Takeaways:**
 
