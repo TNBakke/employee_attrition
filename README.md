@@ -4,7 +4,7 @@
 
 ### Background and Objectives
 
-From my experience as an entrepreneur, it is critical to manage voluntary employee attrition ensuring your business remains profitable and maintains a high level of efficiency. According to Work Institute's 2017 Retention Report, it is estimated to cost as much as 33% of a worker's annual salary to replace an employee. Additionally, the report found that about 75% of the reasons employees leave could have been prevented. So, to help businesses save money and time trying to find replacements, I want to gain more insight as to what the key contributing factors are when an employee leaves a company voluntarily.
+From my experience as an entrepreneur, it is critical to manage voluntary employee attrition ensuring your business remains profitable and maintains a high level of efficiency. According to Work Institute's 2017 Retention Report, it is estimated to cost as much as 33% of a worker's annual salary to replace an employee. Additionally, the report found that about 75% of the reasons employees leave could have been prevented. On average in the United States, the percentage of employees leaving companies voluntarily is about 15% and it would be ideal if companies could get their respective rate under 10%. So, to help businesses save money and time trying to find replacements, I want to gain more insight as to what the key contributing factors are when an employee leaves a company voluntarily. 
 
 In order to analyze these factors I am going to analyze the ‘IBM HR Analytics Employee Attrition Dataset’ (ADD KAGGLE LINK) dataset and build various machine learning algorithms to predict which employees left voluntarily and why. Also, I want determine which factors have the most correlation to an employee leaving voluntairy so HR departments can better understand which employees may be at more risk of leaving. After performing this analysis, I will make some recommendations to HR Departments on actions they can take to help minimize their employee attrition rate and retain talent. 
 
@@ -61,12 +61,14 @@ As stated above, there were no 'Null' or 'NaN' values in the dataset, so I did n
 After the dataset was cleaned, I wanted to perform some Exploratory Data Analysis (EDA) on the features to confirm my initial assumptions and see if any other features had strong correlations to employee attrition. So, I plotted a histogram and a 'Heat Map'of all the features to better understand the distributions and correlations of each column in the dataset. There were a few things that stuck out to me after generating the plot (INSERT PLOTS HERE AND HERE if you want to take a closer look):
 
 **Feature Distribution Takeaways:**
+
 * The vast majority of the company lives within 10 miles of the office.
 * Job Satisfaction among the employees is high with most scores at a 3 or a 4 with a 4 being highest score.
 * Majority of employees have worked at only 1 previous company before current position.
 * **IMPORTANT**: The 'Attrition' target variable is highly imbalanced as only ~16% of employees left the company (~84% stayed with company). So, I will need to be sure to account for this imbalance while I am building my machine learning algorithms.
 
 **Heat Map Takeaways:**
+
 According to the 'Heat Map', the features that had the highest correlation with attrition were:
 * 'age', 'job_level', 'monthly_income', 'total_working_years', 'stock_option_level', 'years_at_company', and 'years_with_curr_manager'
 
@@ -75,6 +77,7 @@ According to the 'Heat Map', the features that had the highest correlation with 
 *Note: The Heat Map did not include any categorical features, so it only provides insight to the numeric features. I will address the categorical features below* 
 
 **Features Vs. Attrition Target Variable**
+
 Lastly, after plotting each feature with respect to the 'Attrition' target variable, I found these 8 features had valuable insight on if an employee voluntarily left the company.
 
 ![Alt](./images/eda_plot_8_new.png)
@@ -91,7 +94,7 @@ The first machine learning analysis I wanted to perform on my dataset was Lasso 
 
 Taking the optimal value for Lambda of 0.006, I then fit the Lasso Regression to my data and caculated the most important features so I can use them for my Logistic Regression algorithm. 
 
-* The features were: 'age', 'monthly_income', 'job_satisfaction', 'business_travel', 'years_at_company', 'daily_rate'.
+* The features were: 'age', 'monthly_income', 'job_satisfaction', 'business_travel', 'overtime', 'years_at_company', 'daily_rate'
 
 ### Logistic Regression
 
@@ -107,15 +110,20 @@ Using all of the features and data, I built a Random Forest model with all defau
 
 Then, after plotting the optimized Random Forest ROC Curve I was able to increase my AUC Score to 0.54 as shown in the plot below:
 
-![Alt](./images/roc_curve_optimal.png)
+<div align="center">![Alt](./images/roc_curve_optimal.png)
 
 As noted above, I am looking to minimize the amount of False Negatives and maximize my Recall score. So, after reivewing the plot and thinking about the tradeoffs, I believe a threshold with a True Positive Rate of about 85% and a False Positive Rate of about 40% would be ideal. 
 
 ### Conclusion and Recommendations
 
+After performing this analysis on the data, there are some key takeawys that I believe will help HR Departments retain talent. It's pretty evident that employees under about the age of 35 are at a high risk of voluntarily leaving the company. On the other hand, employees who are over 35 years old and have been working with the company for over 10 years are at low risk of leaving. To my surprise, the distance from an employee's residence to the office did not have a strong correlation for predicting if an employee would leave or not. Lastly, it is important to minimize the amount of employees who are working Overtime hours.  
 
+Here are some recommendations that I have come up with to help HR staff minimize their employee attrition:
+* For the younger employees who are predicted to have a high probability of leaving, their managers should take the time recognize that employee during a company meeting for some of their recent accomplishments and contributions.  
+* For the employees that are working overtime hours, it could be beneficial to provide them with a meal stipend for dinner to show appreciation and consideration. These dinner meal vouchers or credits would be substantially less costly then having the employee leave voluntarily.
 
 ### Future Work 
-* Perform some more feature engineering for training the machine learning algorithms 
+
 * Build XGBoost Machine Learning model and evaluate performace against Optimized Random Forest
+* Perform some more feature engineering for training the machine learning algorithms 
 * Create a Flask application for HR departments to access and input in respective employee features to compute a probability of them voluntarily leaving 
