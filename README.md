@@ -66,10 +66,8 @@ After the dataset was cleaned, I wanted to perform some Exploratory Data Analysi
 
 **Heat Map Takeaways:**
 
-According to the 'Heat Map', the features that had the highest correlation with attrition were:
+According to the [Heat Map](https://github.com/TNBakke/employee_attrition/blob/main/images/heat_map.png), the features that had the highest correlation with attrition were:
 * 'age', 'over_time', 'job_level', 'monthly_income', 'total_working_years', 'stock_option_level', 'years_at_company', and 'years_with_curr_manager'
-
-![Alt](./images/heat_map.png)
 
 *Note: The Heat Map did not include any categorical features, so it only provides insight to the numeric features. I will address the categorical features below* 
 
