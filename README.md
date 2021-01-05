@@ -105,7 +105,7 @@ Using all of the features and data, I built a Random Forest model with all defau
 
 Then, after plotting the optimized Random Forest ROC Curve I was able to increase my AUC Score to 0.54 as shown in the plot below:
 
-![Alt](./images/roc_curve_optimal.png)
+![Alt](./images/roc_curve_rf_gb.png)
 
 As noted above, I am looking to minimize the amount of False Negatives and maximize my Recall score. So, after reivewing the plot and thinking about the tradeoffs, I believe a threshold with a True Positive Rate of about 85% and a False Positive Rate of about 40% would be ideal. 
 
