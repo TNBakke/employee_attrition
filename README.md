@@ -95,7 +95,7 @@ Taking the optimal value for Lambda of 0.006, I then fit the Lasso Regression to
 
 Now, that I have the features from performing my Lasso Regression, I built the Logistic Regression model and adjusted the 'class_weights' in order to maximize the Recall Score. I decided to optimize the Recall score because minimizing the amount of False Negatives would be vital for HR staff to retain talent. In this case, a False Negative would be an employee who was predicted to stay with the company when in reality they voluntarily left. 
 
-After evaluating the 'class_weights', I found the best option was `w = {0:5, 1:95}` and received a Recall Score of 95.8%. Then I plotted the ROC curve for these class weights and calculated an Area Under the Curve (AUC) value of 0.52. These results are not bad, but I believe there is room for improvement. So, I am going to build a Random Forest model and see how that performs compared to my Logistic Regression Model.
+After evaluating the 'class_weights', I found the best option was `w = {0:5, 1:95}` and received a Recall Score of 95.8%. Then I plotted the ROC curve for these class weights and calculated an Area Under the Curve (AUC) value of 0.52. These results are not great (slightly better than random guessing) and believe there is room for improvement. So, I am going to build a Random Forest model and see how that performs compared to my Logistic Regression Model.
 
 ### Random Forest 
 
@@ -105,7 +105,7 @@ Using all of the features and data, I built a Random Forest model with all defau
 
 Then, after plotting the optimized Random Forest ROC Curve I was able to increase my AUC Score to 0.54 as shown in the plot below:
 
-![Alt](./images/roc_curve_optimal.png)
+![Alt](./images/roc_curve_rf_gb.png)
 
 As noted above, I am looking to minimize the amount of False Negatives and maximize my Recall score. So, after reivewing the plot and thinking about the tradeoffs, I believe a threshold with a True Positive Rate of about 85% and a False Positive Rate of about 40% would be ideal. 
 
