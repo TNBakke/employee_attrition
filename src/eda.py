@@ -65,12 +65,12 @@ def one_hot_encoding(df, categorical_features):
 
 if __name__ == '__main__':
     
-    # column_reformatting(df)
+    column_reformatting(df)
     
-    # col_list_to_drop = ['over18', 'standard_hours', 'employee_count', 'employee_number']
-    # drop_columns(df, col_list_to_drop)
+    col_list_to_drop = ['over18', 'standard_hours', 'employee_count', 'employee_number']
+    drop_columns(df, col_list_to_drop)
     
-    # change_to_bin_cols = ['attrition', over_time']
-    # change_to_binary(df, change_to_bin_cols)
+    change_to_bin_cols = ['attrition', over_time']
+    change_to_binary(df, change_to_bin_cols)
 
-    # df = one_hot_encoding(df, categorical_features_list)
+    df = one_hot_encoding(df, categorical_features_list)

@@ -73,5 +73,5 @@ def knn_model_tuning_cv(leaf_size_list, n_neighbors_list, p=[1,2]):
 
     
 if __name__ == '__main__':
-    # knn_model_std_scaler(df)
-    # knn_model_tuning_cv(leaf_size_list, n_neighbors_list, p)
+    knn_model_std_scaler(df)
+    knn_model_tuning_cv(leaf_size_list, n_neighbors_list, p)

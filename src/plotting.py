@@ -108,9 +108,9 @@ def lasso_eval_lambda_plot():
     plt.grid()    
 
 if __name__ == '__main__':
-    # heat_map(df)
-    # feature_hist(df)
-    # count_plot(df)
-    # attrition_by_feature_plot(df,feature)
-    # roc_plot(X_test, y_test)
+    heat_map(df)
+    feature_hist(df)
+    count_plot(df)
+    attrition_by_feature_plot(df,feature)
+    roc_plot(X_test, y_test)
     

@@ -57,5 +57,5 @@ def random_forest_grid(df):
 
 
 if __name__ == '__main__':
-    # default_random_forest(df)
-    # random_forest_grid(df)
+    default_random_forest(df)
+    random_forest_grid(df)

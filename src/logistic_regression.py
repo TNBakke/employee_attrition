@@ -41,4 +41,4 @@ def logistic_regression_class_weight(class_weight, lasso_features):
     return con_matrix
 
 if __name__ == '__main__':
-    # logistic_regression_class_weight(class_weight, lasso_features)
+    logistic_regression_class_weight(class_weight, lasso_features)
