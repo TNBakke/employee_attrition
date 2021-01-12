@@ -107,10 +107,28 @@ def lasso_eval_lambda_plot():
     plt.legend(loc='best')
     plt.grid()    
 
+
+def age_dist_plot():
+    df = pd.read_csv("../data/employee_attrition.csv")
+    plt.figure(figsize=(8,5), dpi=400)
+    plt.style.use('seaborn-colorblind')
+    plt.grid(True, alpha=0.5)
+    sns.kdeplot(df.loc[df['Attrition'] == 'No', 'Age'], label = 'Active Employee')
+    sns.kdeplot(df.loc[df['Attrition'] == 'Yes', 'Age'], label = 'Ex-Employees')
+    ax.plot(linewidth=10)
+    plt.legend(loc='upper right')
+    plt.xlim(left=18, right=60)
+    plt.xlabel('Age', fontsize=14)
+    plt.ylabel('Density', fontsize=14)
+    plt.title('Age Distribution vs. Attrition Status', fontsize=16);
+
+
+
 if __name__ == '__main__':
     heat_map(df)
     feature_hist(df)
     count_plot(df)
     attrition_by_feature_plot(df,feature)
     roc_plot(X_test, y_test)
+    age_dist_plot()
     
