@@ -115,7 +115,9 @@ Lastly, I evaluated a few other ensemble machine learning models to see if I cou
 
 Since the inferential Logistic Regression determined Monthly Income as a highly correlated feature, I wanted to explore that data in further detail. So, I evaluated the Monthly Income for Younger vs. Older employess (see plot below). As you can see, Employees 40 or over make almost 2x the average monthly income than Employees Under 40 which is to be expected to a degree due to experience. Additionally, it was found that 76% of all churned employees were under 40. Lastly, employees who churned under 40 received about 33% less income montly on average.
 
-![Alt](./images/income_vs_age.png =300x300)
+<p align="center">
+  <img align="center" src="./images/income_vs_age.png" height="600" width="600" title="Monthly Income vs. Age">
+ </p>
 
 Knowing these discrepancies, I created a cost-benefit matrix (see below) to evaluate how the company can minimize costs. I wanted to evaluate giving the riskiest employees a 10% salary adjustment vs. incurring employee replacement costs of about 33% employee salary.
 
