@@ -127,7 +127,9 @@ Knowing these discrepancies, I created a cost-benefit matrix (see below) to eval
 
 Then, I used my best performing Gradient Boost predictive model with a cost-benefit matrix to see if we could help save the company money. On the right side of the plot the company is giving salary adjustments to all the employees and the left is providing no adjustments. By further analyzing the plot, you can see the company would save approximately $273k by providing a 10% Salary Adjustment to the 53% of Riskiest Employees.
 
-![Alt](./images/cost_benefit_plot.png)
+<p align="center">
+  <img align="center" src="./images/cost_benefit_plot.png" height="600" width="600" title="Cost Benefit Matrix Plot">
+ </p>
 
 ### Conclusion and Recommendations
 
