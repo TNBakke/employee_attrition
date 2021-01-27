@@ -35,4 +35,4 @@ def lasso_reg(alpha):
 
     
 if __name__ == '__main__':
-    lasso_reg(0.5):
+    lasso_reg(0.5)
